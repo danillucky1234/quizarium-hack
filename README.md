@@ -3,7 +3,7 @@ Such as I didn't find a site with answers for english version of Quizarium, I de
 
 #### What actually do this program?
 This program trying to find answers in the database and if found it - sends answer to the specified chat. That can help you to earn some points in the game.  
-There are 10.500+ rows in the database at the moment  
+There are 12.500+ rows in the database at the moment  
 
 ### Installation
 0. First check if you have `mysql` installed and make sure that your database management system is configured correctly. You can install and configure it according to [this tutorial](https://dev.mysql.com/doc/mysql-getting-started/en/)
@@ -14,7 +14,7 @@ Then you should type your password and create a new database, such as: `CREATE D
 4. When you created new database you can exit from mysql prompt by typing `quit` and go to the command line. Let's add all rows to your new database:  
 `mysql -u <your mysql username> -p <newly created database name> < quizarium.sql`  
 That's fine, from now you have a big dump of database with answers.
-5. Next, we need to change the settings in the `config.py` file. We need to change api\_id, api\_hash and username. All these values are necessary for [telethon](https://docs.telethon.dev/en/latest/basic/installation.html) to interact correctly with your account. So let's get started.  
+5. Next, we need to change the settings in the `config.py` file. But before that we have to write the following command in the terminal `git update-index --assume-unchanged config.py` so that the git knows that this file should not be indexed (this will be useful when we update the database, so it does not cause errors when merge config.py). We need to change api\_id, api\_hash and username. All these values are necessary for [telethon](https://docs.telethon.dev/en/latest/basic/installation.html) to interact correctly with your account. So let's get started.  
   5.1 You need to [log in to your account](https://my.telegram.org/) with your phone number and go to the API Development tools section.  
   5.2 After that create `New application` and fill in `App title` & `Short name`. The other fields are optional and you don't have to fill them in. By the way, you can change these two fields later.  
 Click on `Create application` at the end. Remember that your **<ins>API hash is secret</ins>** and Telegram won't let you revoke it. <ins>Don't post it anywhere!</ins>  
@@ -30,7 +30,7 @@ Click on `Create application` at the end. Remember that your **<ins>API hash is 
 
 ### How to update mysql database?
 1. In the working directory type  
-`wget https://github.com/danillucky1234/quizarium-hack/raw/main/quizarium.sql`  
+`git pull`  
 2. And then update existing db:  
 `mysql -u <your mysql username> -p <database name> < quizarium.sql`  
 
