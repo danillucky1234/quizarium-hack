@@ -3,7 +3,7 @@ Such as I didn't find a site with answers for english version of Quizarium, I de
 
 #### What actually do this program?
 This program trying to find answers in the database and if found it - sends answer to the specified chat. That can help you to earn some points in the game.  
-There are 18763 rows in the database at the moment  
+There are 19761 rows in the database at the moment  
 
 ### Installation
 0. First check if you have `mysql` installed and make sure that your database management system is configured correctly. You can install and configure it according to [this tutorial](https://dev.mysql.com/doc/mysql-getting-started/en/)
